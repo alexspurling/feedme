@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Feedme RSS alerter</title>
+    <link type="text/css" rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <div>
+    <h1>Feedme</h1>
+    <form action="/addfeed" method="post">
+      <div>
+      <input id="feed" name="feedurl" size="70" value="http://newsrss.bbc.co.uk/rss/newsonline_uk_edition/front_page/rss.xml">
+      <input id="nom" type="submit" value="Nom">
+      </div>
+    </form>
+    {% if error_message %}
+      <p style="color:red">{{ error_message }}</p>
+    {% endif %}
+    
+    {% for feed in feeds %}
+      <p>
+        Title: {{ feed.title|escape }}<br>
+        URL: {{ feed.url|escape }}<br>
+        Text: {{ feed.text|escape }}<br>
+      </p>
+    {% endfor %}
+
+    <a href="{{ url }}">{{ url_linktext }}</a>
+    </div>
+  </body>
+</html>
