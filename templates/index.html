@@ -18,9 +18,11 @@
     
     {% for feed in feeds %}
       <p>
-        Title: {{ feed.title|escape }}<br>
-        URL: {{ feed.url|escape }}<br>
-        Text: {{ feed.text|escape }}<br>
+        <strong>Title</strong>: {{ feed.title|escape }}<br>
+        <strong>URL</strong>: {{ feed.url|escape }}<br>
+        <strong>Text</strong>: {{ feed.text|escape }}<br>
+        <strong>Key</strong>: {{ feed.key|escape }}<br>
+        <strong>Scheduled for</strong>: {{ feed.scheduled_for|escape }}<br>
       </p>
     {% endfor %}
 

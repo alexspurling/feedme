@@ -5,7 +5,8 @@ from feedme.views import *
 
 application = webapp.WSGIApplication(
                                      [('/', MainPage),
-                                      ('/addfeed', AddFeed)],
+                                      ('/addfeed', AddFeed),
+                                      ('/getfeed', GetFeed)],
                                      debug=True)
 
 def main():
